@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald";
+  box-sizing: border-box;
+}
+body {
+  background-color: #172026;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: #c4f2e3;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.342);
+  max-width: 100%;
+  width: 400px;
+  overflow: hidden;
+}
+.efeito {
+  background-color: #c4f2e300;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 400px;
+  height: 600px;
+  max-width: 100%;
+  margin-left: 40px;
+  margin-top: 40px;
+  position: absolute;
+  z-index: -1;
+}
+.h1 {
+  background-color: #1c8a65;
+  padding-left: 20px;
+  color: #c4f2e3;
+  margin: 20px;
+  border-radius: 10px;
+}
+.form {
+  padding: 20px;
+}
+.control {
+  margin-bottom: 10px;
+  padding-bottom: 25px;
+  position: relative;
+}
+.control label {
+  color: #234b3e;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.control input {
+  width: 100%;
+  border: 2px solid #f0f0f0;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+}
+.control i {
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  visibility: hidden;
+}
+.control small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+/*erro e sucesso*/
+.control.erro input {
+  border-color: #e74c3c;
+}
+.control.sucesso input {
+  border-color: #2ecc71;
+}
+
+.control.sucesso i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+.control.erro i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+.control.erro small {
+  visibility: visible;
+  color: #e74c3c;
+}
+.form button {
+  background-color: #fdd248;
+  border: 2px solid #fdd248;
+  color: #e39723;
+  font-size: 14px;
+  width: 100%;
+  padding: 5px;
+  transition: transform 500ms;
+  border-radius: 10px;
+}
+button:hover{
+  background-color: #fdd348cc;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+button:active{
+  transform: scale(0.95);
+  animation: none;
+}
