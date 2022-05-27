@@ -24,20 +24,25 @@ function verficarInputs(e) {
   } else {
     mostrarSucesso(indiceNome);
   }
+
   if (emailValue == "") {
     mostrarError(indiceEmail, "O email é obrigatório");
+  }else if (!validarEmail(emailValue)) {
+    mostrarError(indiceEmail, "Por favor, Insira um email valido");
   } else {
     mostrarSucesso(indiceEmail);
   }
+
 
   if (senhaValue == "") {
     mostrarError(indiceSenha, "A senha é obrigatória");
   } else {
     if (senhaValue.length < 3) {
-      mostrarError(indiceSenha, "Sua senha deve ter no mínimo 3 caracteres")
-    }else{
-    mostrarSucesso(indiceSenha);
-  }}
+      mostrarError(indiceSenha, "Sua senha deve ter no mínimo 3 caracteres");
+    } else {
+      mostrarSucesso(indiceSenha);
+    }
+  }
 
   if (senhaConfirmaValue == "") {
     mostrarError(indiceSenhaConfirma, "A senha é obrigatória");
@@ -47,11 +52,13 @@ function verficarInputs(e) {
         indiceSenhaConfirma,
         "As senhas não são correspondentes. Por favor, tente novamente"
       );
-    }
-    else if (senhaConfirmaValue.length < 3) {
-      mostrarError(indiceSenhaConfirma, "Sua senha deve ter no mínimo 3 caracteres")
-    }else{
-    mostrarSucesso(indiceSenhaConfirma);
+    } else if (senhaConfirmaValue.length < 8) {
+      mostrarError(
+        indiceSenhaConfirma,
+        "Sua senha deve ter no mínimo 8 caracteres"
+      );
+    } else {
+      mostrarSucesso(indiceSenhaConfirma);
     }
   }
 }
@@ -63,4 +70,8 @@ function mostrarError(indice, mensagem) {
 }
 function mostrarSucesso(indice) {
   control.item(indice).className = "control sucesso";
+}
+function validarEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
 }
