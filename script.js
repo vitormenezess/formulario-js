@@ -37,8 +37,8 @@ function verficarInputs(e) {
   if (senhaValue == "") {
     mostrarError(indiceSenha, "A senha é obrigatória");
   } else {
-    if (senhaValue.length < 3) {
-      mostrarError(indiceSenha, "Sua senha deve ter no mínimo 3 caracteres");
+    if (senhaValue.length < 8) {
+      mostrarError(indiceSenha, "Sua senha deve ter no mínimo 8 caracteres");
     } else {
       mostrarSucesso(indiceSenha);
     }
